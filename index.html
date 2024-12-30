@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second HW on JS course!</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/icons-16.png"
+    />
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        background-color: goldenrod;
+        margin: 0;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 38px;
+        color: brown;
+      }
+
+      .description {
+        font-size: 20px;
+        font-weight: 600;
+        max-width: 1000px;
+      }
+
+      section {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .wrapper {
+        display: flex;
+        gap: 40px;
+      }
+
+      .task-header {
+        font-size: 18px;
+        margin: 8px 0;
+        font-weight: 600;
+      }
+
+      .task-list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 4px;
+        margin: 4px;
+        gap: 16px;
+      }
+
+      .task-wrapper {
+        border: 4px solid #000;
+        border-radius: 16px;
+        padding: 8px;
+        max-width: 1000px;
+      }
+
+      .task-item {
+        border: 2px solid #000;
+        border-radius: 8px;
+        padding: 12px 12px;
+      }
+
+      .task-description {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px;
+        margin-left: 24px;
+      }
+
+      .first-task-arg-field {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: 80px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
+      .second-task-arg-field {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: auto;
+        margin-top: 8px;
+      }
+
+      .get-first-task-result {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        background-color: brown;
+        color: gold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0 auto;
+        padding: 8px 16px;
+      }
+      .get-first-task-result:hover {
+        background-color: rgb(76, 19, 19);
+      }
+      .tasc-form {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+      }
+      .first-task-res-field {
+        background-color: transparent;
+        border-radius: 4px;
+        border: 2px solid;
+        margin-top: 8px;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: 400px;
+      }
+
+      .field-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .field-radio-column {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+      }
+
+      .tasc-field-label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .tasc-radio-label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        align-items: center;
+      }
+
+      .second-task-arg-radio {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .first-task-arg-radio {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: 150px;
+        display: block;
+        margin-left: 10px;
+      }
+
+      .width-large {
+        width: 500px;
+        display: block;
+        align-items: center;
+      }
+
+      .width-small {
+        width: 100px;
+      }
+
+      .textarea-heigth {
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>П'ята домашка по JS!</h1>
+    </header>
+    <section class="wrapper">
+      <div>
+        <img
+          src="./images/Coder-Transparent-Image.png"
+          alt="Кодер"
+          width="400"
+        />
+      </div>
+      <div class="content">
+        <p class="description">
+          На цій сторінці у консолі ви можете побачити результати роботи
+          функцій, які необхідно було оголосити за умовами домашнього завдання.
+        </p>
+        <div class="task-wrapper">
+          <ul class="task-list">
+            <li class="task-item">
+              <p class="task-header">Перше завдання:</p>
+              <p class="task-description">
+                Напиши стрілочну функцію getUserNames(users), яка прийматиме
+                один параметр users — масив об’єктів користувачів. Функція має
+                повертати масив імен усіх користувачів (властивість name) із
+                масиву users.<br /><br />
+                На що буде звертати увагу ментор при перевірці: <br />•
+                Оголошена змінна getUserNames <br />• Змінній getUserNames
+                присвоєна стрілочна функція з параметром (users). <br />• Для
+                перебирання параметра users використовується метод map() <br />•
+                Виклик функції із зазначеним масивом користувачів повертає масив
+                ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head",
+                "Carey Barr", "Blackburn Dotson", "Sheree Anthony"] <br />•
+                Виклик функції з випадковими, але валідними аргументами повертає
+                правильне значення
+              </p>
+              <!-- <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label">
+                    Введіть об'єкт:
+                    <input
+                      class="first-task-arg-field second-tasc width-large"
+                      type="text"
+                      name="classInputField"
+                      id="classInputField"
+                  /></label>
+                  <label class="tasc-field-label">
+                    Введіть величину контейнера:
+                    <input
+                      class="first-task-arg-field second-tasc"
+                      type="number"
+                      name="box-size"
+                      id="box-size"
+                  /></label>
+                </div>
+                <button
+                  type="button"
+                  id="first-task-res-button"
+                  class="get-first-task-result"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="first-task-result-field"
+                    id="first-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form> -->
+            </li>
+            <li class="task-item">
+              <p class="task-header">Друге завдання:</p>
+              <p class="task-description">
+                Напиши стрілочну функцію getUsersWithFriend(users, friendName) ,
+                яка прийматиме два параметра: <br />• перший параметр users —
+                масив об’єктів користувачів <br />• другий параметр friendName —
+                ім’я друга для пошуку. <br />Функція має повертати масив усіх
+                користувачів із масиву users, у яких є друг з іменем friendName.
+                Друзі кожного користувача зберігаються у властивості friends.
+                Якщо користувачів, у яких є такий друг немає, то функція має
+                повернути порожній масив. <br />Поради:<br />• Метод filter()
+                можна використовувати для створення нового масиву з елементами,
+                які задовольняють певну умову. <br />• Використовуй метод
+                includes() для перевірки, чи масив friends містить friendName.
+                <br /><br />На що буде звертати увагу ментор при перевірці:
+                <br />• Оголошена змінна getUsersWithFriend <br />• Змінній
+                getUsersWithFriend присвоєна стрілочна функція з параметрами
+                (users, friendName) <br />• Для перебирання параметра users
+                використовується метод filter() <br />• Якщо значення параметра
+                friendName — це рядок "Briana Decker", функція повертає масив
+                об'єктів користувачів з іменами Sharlene Bush і Sheree Anthony
+                <br />• Якщо значення параметра friendName — це рядок "Goldie
+                Gentry", функція повертає масив об'єктів користувачів з іменами
+                Elma Head і Sheree Anthony <br />• Якщо значення параметра
+                friendName — це рядок "Adrian Cross", функція повертає порожній
+                масив <br />• Виклик функції з випадковими, але валідними
+                аргументами повертає правильне значення
+              </p>
+              <!-- <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label"
+                    >Введіть масив об'єктів:
+                    <textarea
+                      class="second-task-arg-field width-large textarea-heigth"
+                      rows="10"
+                      resize="none"
+                      name="firstArrayField"
+                      id="firstArrayField"
+                    ></textarea>
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  id="second-task-res-button"
+                  class="get-first-task-result"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="second-task-result-field"
+                    id="second-task-result-field"
+                    class="first-task-res-field width-large"
+                /></label>
+              </form> -->
+            </li>
+            <li class="task-item">
+              <p class="task-header">Третє завдання:</p>
+              <p class="task-description">
+                Напиши стрілочну функцію sortByDescendingFriendCount(users) ,
+                яка прийматиме один параметр users — масив об’єктів
+                користувачів. <br />Функція має повертати масив усіх
+                користувачів, відсортованих за спаданням кількостій їх друзів
+                (властивість friends). <br /><br />На що буде звертати увагу
+                ментор при перевірці: <br />• Оголошена змінна
+                sortByDescendingFriendCount <br />• Змінній
+                sortByDescendingFriendCount присвоєна стрілочна функція з
+                параметром (users) <br />• Для перебирання параметра users
+                використаний метод toSorted() <br />• Виклик функції із
+                зазначеним масивом users повертає новий масив користувачів,
+                відсортований за спаданням кількості їхніх друзів <br />• Виклик
+                функції з випадковими, але валідними аргументами повертає
+                правильне значення
+              </p>
+              <!-- <form class="tasc-form">
+                <p class="task-description" style="font-weight: 700">
+                  Виберіть метод, введіть потрібне значення і натисніть кнопку
+                  "Дивитись результат:"
+                </p>
+                <div class="field-container field-radio-column">
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-name"
+                      value="1"
+                    />changeUsername(newName): newName =
+                    <input
+                      type="text"
+                      class="first-task-arg-radio"
+                      id="third-tasc-name-value"
+                    />
+                  </label>
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-radio-time"
+                      value="2" />updatePlayTime(hours): hours =
+                    <input
+                      type="number"
+                      class="first-task-arg-radio"
+                      id="third-radio-time-value"
+                  /></label>
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-info"
+                      value="3"
+                    />getInfo():</label
+                  >
+                </div>
+                <button
+                  type="button"
+                  id="third-task-res-button"
+                  class="get-first-task-result"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="third-task-result-field"
+                    id="third-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form> -->
+            </li>
+            <li class="task-item">
+              <p class="task-header">Четверте завдання:</p>
+              <p class="task-description">
+                Напиши стрілочну функцію sortByDescendingFriendCount(users) ,
+                яка прийматиме один параметр users — масив об’єктів
+                користувачів. <br />Функція має повертати масив усіх
+                користувачів, відсортованих за спаданням кількостій їх друзів
+                (властивість friends). <br /><br />
+                На що буде звертати увагу ментор при перевірці: <br />•
+                Оголошена змінна sortByDescendingFriendCount <br />• Змінній
+                sortByDescendingFriendCount присвоєна стрілочна функція з
+                параметром (users) <br />• Для перебирання параметра users
+                використаний метод toSorted() <br />• Виклик функції із
+                зазначеним масивом users повертає новий масив користувачів,
+                відсортований за спаданням кількості їхніх друзів <br />• Виклик
+                функції з випадковими, але валідними аргументами повертає
+                правильне значення
+              </p>
+              <!-- <form class="tasc-form">
+                <p class="task-description" style="font-weight: 700">
+                  Виберіть метод, введіть потрібне значення і натисніть кнопку
+                  "Дивитись результат:"
+                </p>
+                <div class="field-container field-radio-column">
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-name"
+                      value="1"
+                    />changeUsername(newName): newName =
+                    <input
+                      type="text"
+                      class="first-task-arg-radio"
+                      id="third-tasc-name-value"
+                    />
+                  </label>
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-radio-time"
+                      value="2" />updatePlayTime(hours): hours =
+                    <input
+                      type="number"
+                      class="first-task-arg-radio"
+                      id="third-radio-time-value"
+                  /></label>
+                  <label class="tasc-radio-label">
+                    <input
+                      class="second-task-arg-radio"
+                      type="radio"
+                      name="third-tasc-method"
+                      id="third-tasc-info"
+                      value="3"
+                    />getInfo():</label
+                  >
+                </div>
+                <button
+                  type="button"
+                  id="third-task-res-button"
+                  class="get-first-task-result"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="third-task-result-field"
+                    id="third-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script src="./js/task-1.js"></script>
+    <script src="./js/task-2.js"></script>
+    <script src="./js/task-3.js"></script>
+    <script src="./js/task-4.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+  </body>
+</html>
