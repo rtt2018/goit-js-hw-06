@@ -219,19 +219,27 @@
             <li class="task-item">
               <p class="task-header">Перше завдання:</p>
               <p class="task-description">
-                Напиши стрілочну функцію getUserNames(users), яка прийматиме
-                один параметр users — масив об’єктів користувачів. Функція має
-                повертати масив імен усіх користувачів (властивість name) із
-                масиву users.<br /><br />
-                На що буде звертати увагу ментор при перевірці: <br />•
-                Оголошена змінна getUserNames <br />• Змінній getUserNames
-                присвоєна стрілочна функція з параметром (users). <br />• Для
-                перебирання параметра users використовується метод map() <br />•
-                Виклик функції із зазначеним масивом користувачів повертає масив
-                ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head",
-                "Carey Barr", "Blackburn Dotson", "Sheree Anthony"] <br />•
-                Виклик функції з випадковими, але валідними аргументами повертає
-                правильне значення
+                Перед звільненням розробник зламав вихідний код управління
+                акаунтами користувачів нашого сервісу доставки їжі. Виконай
+                рефакторинг методів об'єкта customer, розставивши відсутні this
+                під час звернення до властивостей об'єкта.
+                <br /><br />Використай цей стартовий код і виконай
+                рефакторинг.<br /><br />
+                На що буде звертати увагу ментор при перевірці:<br />• Оголошена
+                змінна customer Значення змінної customer — це об'єкт із
+                властивостями та методами <br />• Виклик customer.getDiscount()
+                повертає поточне значення властивості discount <br />• Виклик
+                customer.setDiscount(0.15) оновлює значення властивості discount
+                <br />• Виклик customer.getBalance() повертає поточне значення
+                властивості balance. <br />• Виклик customer.getOrders()
+                повертає поточне значення властивості orders <br />• Виклик
+                customer.addOrder(5000, "Steak") додає "Steak" у масив значень
+                властивості orders та оновлює баланс <br />• Метод getBalance
+                об'єкта customer використовує this <br />• Метод getDiscount
+                об'єкта customer використовує this <br />• Метод setDiscount
+                об'єкта customer використовує this <br />• Метод getOrders
+                об'єкта customer використовує this <br />• Метод addOrder
+                об'єкта customer використовує this
               </p>
               <!-- <form class="tasc-form">
                 <div class="field-container">
@@ -272,30 +280,39 @@
             <li class="task-item">
               <p class="task-header">Друге завдання:</p>
               <p class="task-description">
-                Напиши стрілочну функцію getUsersWithFriend(users, friendName) ,
-                яка прийматиме два параметра: <br />• перший параметр users —
-                масив об’єктів користувачів <br />• другий параметр friendName —
-                ім’я друга для пошуку. <br />Функція має повертати масив усіх
-                користувачів із масиву users, у яких є друг з іменем friendName.
-                Друзі кожного користувача зберігаються у властивості friends.
-                Якщо користувачів, у яких є такий друг немає, то функція має
-                повернути порожній масив. <br />Поради:<br />• Метод filter()
-                можна використовувати для створення нового масиву з елементами,
-                які задовольняють певну умову. <br />• Використовуй метод
-                includes() для перевірки, чи масив friends містить friendName.
+                Створи клас Storage, який створюватиме об'єкти для управління
+                складом товарів. Клас очікує лише один аргумент — початковий
+                масив товарів, який записується до створеного об'єкта в приватну
+                властивість items. <br /><br />Оголоси наступні методи класу:
+                <br />• getItems() — повертає масив поточних товарів у приватній
+                властивості items. <br />• addItem(newItem) — приймає новий
+                товар newItem і додає його до масиву товарів у приватну
+                властивість items об'єкта. <br />• removeItem(itemToRemove) —
+                приймає рядок з назвою товару itemToRemove і видаляє його з
+                масиву товарів у приватній властивості items об'єкта.
                 <br /><br />На що буде звертати увагу ментор при перевірці:
-                <br />• Оголошена змінна getUsersWithFriend <br />• Змінній
-                getUsersWithFriend присвоєна стрілочна функція з параметрами
-                (users, friendName) <br />• Для перебирання параметра users
-                використовується метод filter() <br />• Якщо значення параметра
-                friendName — це рядок "Briana Decker", функція повертає масив
-                об'єктів користувачів з іменами Sharlene Bush і Sheree Anthony
-                <br />• Якщо значення параметра friendName — це рядок "Goldie
-                Gentry", функція повертає масив об'єктів користувачів з іменами
-                Elma Head і Sheree Anthony <br />• Якщо значення параметра
-                friendName — це рядок "Adrian Cross", функція повертає порожній
-                масив <br />• Виклик функції з випадковими, але валідними
-                аргументами повертає правильне значення
+                <br />• Оголошений клас Storage У класі Storage оголошений метод
+                getItems <br />• У класі Storage оголошений метод addItem
+                <br />• У класі Storage оголошений метод removeItem Властивість
+                items <br />• у класі Storage оголошена приватною <br />• Метод
+                getItems повертає значення приватної властивості items
+                екземпляра класу, який його викликає <br />• Метод addItem
+                змінює значення приватної властивості items екземпляра класу,
+                який його викликає <br />• Метод removeItem змінює значення
+                приватної властивості items екземпляра класу, який його викликає
+                <br />• У результаті виклику new Storage(["Nanitoids",
+                "Prolonger", "Antigravitator"]) значення змінної storage — це
+                об'єкт <br />• У об’єкта storage немає публічної властивості
+                items <br />• Перший виклик storage.getItems() одразу після
+                ініціалізації екземпляра повертає масив ["Nanitoids",
+                "Prolonger", "Antigravitator"] <br />• Другий виклик
+                storage.getItems() після виклику storage.addItem("Droid")
+                повертає масив ["Nanitoids", "Prolonger", "Antigravitator",
+                "Droid"] <br />• Третій виклик storage.getItems() після виклику
+                storage.removeItem("Prolonger") повертає масив ["Nanitoids",
+                "Antigravitator", "Droid"] <br />• Четвертий виклик
+                storage.getItems() після виклику storage.removeItem("Scaner")
+                повертає масив ["Nanitoids", "Antigravitator", "Droid"]
               </p>
               <!-- <form class="tasc-form">
                 <div class="field-container">
@@ -330,97 +347,40 @@
             <li class="task-item">
               <p class="task-header">Третє завдання:</p>
               <p class="task-description">
-                Напиши стрілочну функцію sortByDescendingFriendCount(users) ,
-                яка прийматиме один параметр users — масив об’єктів
-                користувачів. <br />Функція має повертати масив усіх
-                користувачів, відсортованих за спаданням кількостій їх друзів
-                (властивість friends). <br /><br />На що буде звертати увагу
-                ментор при перевірці: <br />• Оголошена змінна
-                sortByDescendingFriendCount <br />• Змінній
-                sortByDescendingFriendCount присвоєна стрілочна функція з
-                параметром (users) <br />• Для перебирання параметра users
-                використаний метод toSorted() <br />• Виклик функції із
-                зазначеним масивом users повертає новий масив користувачів,
-                відсортований за спаданням кількості їхніх друзів <br />• Виклик
-                функції з випадковими, але валідними аргументами повертає
-                правильне значення
-              </p>
-              <!-- <form class="tasc-form">
-                <p class="task-description" style="font-weight: 700">
-                  Виберіть метод, введіть потрібне значення і натисніть кнопку
-                  "Дивитись результат:"
-                </p>
-                <div class="field-container field-radio-column">
-                  <label class="tasc-radio-label">
-                    <input
-                      class="second-task-arg-radio"
-                      type="radio"
-                      name="third-tasc-method"
-                      id="third-tasc-name"
-                      value="1"
-                    />changeUsername(newName): newName =
-                    <input
-                      type="text"
-                      class="first-task-arg-radio"
-                      id="third-tasc-name-value"
-                    />
-                  </label>
-                  <label class="tasc-radio-label">
-                    <input
-                      class="second-task-arg-radio"
-                      type="radio"
-                      name="third-tasc-method"
-                      id="third-tasc-radio-time"
-                      value="2" />updatePlayTime(hours): hours =
-                    <input
-                      type="number"
-                      class="first-task-arg-radio"
-                      id="third-radio-time-value"
-                  /></label>
-                  <label class="tasc-radio-label">
-                    <input
-                      class="second-task-arg-radio"
-                      type="radio"
-                      name="third-tasc-method"
-                      id="third-tasc-info"
-                      value="3"
-                    />getInfo():</label
-                  >
-                </div>
-                <button
-                  type="button"
-                  id="third-task-res-button"
-                  class="get-first-task-result"
-                >
-                  &gt;&gt; Дивитись результат: &lt;&lt;
-                </button>
-                <label class="tasc-field-label"
-                  >Результат виконання функції:
-                  <input
-                    type="text"
-                    name="third-task-result-field"
-                    id="third-task-result-field"
-                    class="first-task-res-field"
-                /></label>
-              </form> -->
-            </li>
-            <li class="task-item">
-              <p class="task-header">Четверте завдання:</p>
-              <p class="task-description">
-                Напиши стрілочну функцію sortByDescendingFriendCount(users) ,
-                яка прийматиме один параметр users — масив об’єктів
-                користувачів. <br />Функція має повертати масив усіх
-                користувачів, відсортованих за спаданням кількостій їх друзів
-                (властивість friends). <br /><br />
-                На що буде звертати увагу ментор при перевірці: <br />•
-                Оголошена змінна sortByDescendingFriendCount <br />• Змінній
-                sortByDescendingFriendCount присвоєна стрілочна функція з
-                параметром (users) <br />• Для перебирання параметра users
-                використаний метод toSorted() <br />• Виклик функції із
-                зазначеним масивом users повертає новий масив користувачів,
-                відсортований за спаданням кількості їхніх друзів <br />• Виклик
-                функції з випадковими, але валідними аргументами повертає
-                правильне значення
+                Напиши клас StringBuilder, який приймає один параметр
+                initialValue — довільний рядок, який записується у приватну
+                властивість value об'єкта, що створюється. <br /><br />Оголоси
+                наступні методи класу: getValue() — повертає поточне значення
+                приватної властивості value. padEnd(str) — отримує параметр str
+                (рядок) і додає його в кінець значення приватної властивості
+                value об'єкта, який викликає цей метод. padStart(str) — отримує
+                параметр str (рядок) і додає його на початок значення приватної
+                властивості value об'єкта, який викликає цей метод. padBoth(str)
+                — отримує параметр str (рядок) і додає його на початок і в
+                кінець значення приватної властивості value об'єкта, який
+                викликає цей метод.<br /><br />На що буде звертати увагу ментор
+                при перевірці: <br />• Оголошений клас StringBuilder <br />•
+                Властивість value у класі StringBuilder оголошена приватною
+                <br />• У класі StringBuilder оголошений метод getValue <br />•
+                Метод getValue повертає значення приватної властивості value
+                екземпляра класу, який його викликає <br />• У класі
+                StringBuilder оголошений метод padEnd <br />• Метод padEnd
+                змінює значення приватної властивості value екземпляра класу,
+                який його викликає <br />• У класі StringBuilder оголошений
+                метод padStart <br />• Метод padStart змінює приватну
+                властивість value екземпляра класу, який його викликає <br />• У
+                класі StringBuilder оголошений метод padBoth <br />• Метод
+                padBoth змінює значення приватної властивості value екземпляра
+                класу, який його викликає <br />• У результаті виклику new
+                StringBuilder(".") значення приватної змінної builder — це
+                об'єкт <br />• Об'єкт builder не містить публічну властивість
+                value Перший виклик builder.getValue() одразу після
+                ініціалізації екземпляра повертає рядок . <br />• Другий виклик
+                builder.getValue() після виклику builder.padStart("^") повертає
+                рядок ^. <br />• Третій виклик builder.getValue() після виклику
+                builder.padEnd("^") повертає рядок ^.^ <br />• Четвертий виклик
+                builder.getValue() після виклику builder.padBoth("=") повертає
+                рядок =^.^=
               </p>
               <!-- <form class="tasc-form">
                 <p class="task-description" style="font-weight: 700">
